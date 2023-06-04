@@ -1,0 +1,196 @@
+body {
+    @include tablet {
+        background-color: $dark-slate;
+    }
+}
+
+.container {
+
+    @include tablet {
+        max-width: 100rem;
+        height: 64.3rem;
+        border-radius: 3rem;
+        background-color: $white;
+
+        display: flex;
+        flex-direction: row-reverse;
+        margin: 7.2rem auto;
+    }
+
+    header {
+        .img-desktop {
+            display: none;
+        }
+
+        @include tablet {
+            .img-mobile {
+                display: none;
+            }
+
+            .img-desktop {
+                display: block !important;
+                width: 40rem;
+                height: 58.5rem;
+                margin: 2.3rem;
+            }
+        }
+    }
+
+    .information {
+        margin: 0 2.5rem;
+        color: $dark-slate;
+
+        h1 {
+            font-weight: $bold;
+            font-size: 4rem;
+            text-align: start;
+
+            @include tablet {
+                font-size: 6rem;
+            }
+        }
+
+        p {
+            padding-right: 2rem;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                list-style: none;
+                display: flex;
+
+                span {
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 1.3rem;
+                }
+            }
+        }
+    }
+
+    .check-cont {
+        #check {
+            margin-right: 1.3rem;
+        }
+    }
+
+    .mail {
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 2.5rem;
+
+        span {
+            font-weight: $bold;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        input {
+            border-radius: 1rem;
+            border: 0.1rem solid $grey;
+            margin-bottom: 3rem;
+            text-indent: 2.5rem; // Esto deja un espacio entre el texto y el input
+        }
+
+        .alerta {
+            border: 0.1rem solid $tomato !important;
+            background-color: lighten($tomato, 28%);
+            color: $tomato;
+
+            &::placeholder {
+                color: $tomato !important;
+            }
+
+            &:focus {
+                border-color: $tomato !important;
+                outline: none;
+            }
+        }
+
+        button {
+            background-color: $dark-slate;
+            color: $white;
+            border: none;
+            border-radius: 1rem;
+            font-weight: $bold;
+            margin-bottom: 4.1rem;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                background-color: $tomato;
+                box-shadow: 0 0 10px hsl(4, 100%, 67%);
+            }
+        }
+
+        .information-alert {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    main {
+        @include tablet {
+            width: 50.3rem;
+            height: 44.3rem;
+            margin-top: 5rem;
+        }
+    }
+}
+
+input,
+button {
+    width: 32.7rem;
+    height: 5.5rem;
+
+    @include tablet {
+        width: 100%;
+    }
+}
+
+button {
+    background-color: $dark-slate;
+    color: $white;
+    border: none;
+    border-radius: 1rem;
+    font-weight: $bold;
+    margin-bottom: 4.1rem;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $tomato;
+        box-shadow: 0 0 10px hsl(4, 100%, 67%);
+    }
+}
+
+.error {
+    color: $tomato;
+    display: block;
+}
+
+.mensaje {
+    display: none;
+}
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+
+    @include tablet {
+        color: $white;
+        margin-top: 4rem;
+    }
+
+    a {
+        color: hsl(228, 45%, 44%);
+
+        @include tablet {
+            color: $tomato !important;
+        }
+    }
+}
